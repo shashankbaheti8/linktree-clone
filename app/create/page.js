@@ -30,7 +30,9 @@ const CreateComponent = () => {
       body: raw,
       redirect: "follow",
     };
-    const res = await fetch("http://localhost:3000/api/create/", requestOptions);
+    const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+    const res = await fetch(`${BASE_URL}/api/create/`, requestOptions);
+    
     const result = await res.json();
     if (result.success) {
       toast.success(result.message);
