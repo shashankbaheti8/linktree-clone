@@ -30,7 +30,7 @@ const CreateComponent = () => {
       body: raw,
       redirect: "follow",
     };
-    const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+    const BASE_URL = process.env.NEXT_PUBLIC_HOST || "http://localhost:3000";
     const res = await fetch(`${BASE_URL}/api/create/`, requestOptions);
     
     const result = await res.json();
